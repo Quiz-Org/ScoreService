@@ -1,10 +1,10 @@
-package com.example.quizservice;
+package com.example.scoreservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuizServiceApplicationTests {
+class ScoreServiceApplicationTests {
 
     @Test
     void contextLoads() {
