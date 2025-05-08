@@ -15,8 +15,9 @@ public class ScoreController {
     public UserInfoDto getGreetting(JwtAuthenticationToken auth) {
         return new UserInfoDto(
                 auth.getToken().getClaimAsString(StandardClaimNames.PREFERRED_USERNAME),
+                auth.getToken().getClaimAsString(StandardClaimNames.SUB),
                 auth.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
     }
 
-    public static record UserInfoDto(String name, List roles) {}
+    public static record UserInfoDto(String name,String id, List roles) {}
 }
