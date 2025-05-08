@@ -6,7 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.oidc.StandardClaimNames;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -29,7 +29,7 @@ public class ScoreController {
     }
 
 
-    @PutMapping("/score")
+    @PostMapping("/score")
     public ScoreDto sendScore(JwtAuthenticationToken auth, ScoreDto score){
         String userId = auth.getToken().getClaimAsString(StandardClaimNames.SUB);
         scoreRepository.save(new Score(score,userId));
